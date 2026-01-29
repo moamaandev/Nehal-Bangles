@@ -5,10 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ShoppingBag, Menu, X, Search, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useCart } from '@/context/CartContext';
+import CartDrawer from './CartDrawer';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { count } = useCart();
+    const [cartOpen, setCartOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -64,11 +68,13 @@ export default function Navbar() {
                         <button className="text-stone-800 hover:text-primary transition-colors">
                             <User size={22} />
                         </button>
-                        <button className="text-stone-800 hover:text-primary transition-colors relative">
+                        <button onClick={() => setCartOpen(true)} className="text-stone-800 hover:text-primary transition-colors relative">
                             <ShoppingBag size={22} />
-                            <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                                2
-                            </span>
+                            {count > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                                    {Math.min(count, 99)}
+                                </span>
+                            )}
                         </button>
                     </div>
 
@@ -111,17 +117,20 @@ export default function Navbar() {
                                 <button className="text-foreground hover:text-primary">
                                     <User size={24} />
                                 </button>
-                                <button className="text-foreground hover:text-primary relative">
+                                <button onClick={() => setCartOpen(true)} className="text-foreground hover:text-primary relative">
                                     <ShoppingBag size={24} />
-                                    <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                                        2
-                                    </span>
+                                    {count > 0 && (
+                                        <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                                            {Math.min(count, 99)}
+                                        </span>
+                                    )}
                                 </button>
                             </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
+            <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
         </nav>
     );
 }

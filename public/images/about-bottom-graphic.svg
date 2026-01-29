@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="640" viewBox="0 0 1920 640">
+  <defs>
+    <linearGradient id="bgGradLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFDF7"/>
+      <stop offset="100%" stop-color="#F9F4E8"/>
+    </linearGradient>
+    <linearGradient id="bgGradRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFDF7"/>
+      <stop offset="100%" stop-color="#F3EEE0"/>
+    </linearGradient>
+    <linearGradient id="maroonGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#800000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#800000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="centerLight" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#C5A059"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#800000" flood-opacity="0.08"/>
+    </filter>
+    <filter id="softShadowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#C5A059" flood-opacity="0.12"/>
+    </filter>
+    <pattern id="sparkle" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#FFFFFF" opacity="0.35"/>
+      <circle cx="40" cy="14" r="1.1" fill="#FFFFFF" opacity="0.25"/>
+      <circle cx="18" cy="48" r="1.2" fill="#FFFFFF" opacity="0.3"/>
+      <circle cx="58" cy="38" r="1.0" fill="#FFFFFF" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Background split -->
+  <rect x="0" y="0" width="960" height="640" fill="url(#bgGradLeft)"/>
+  <rect x="960" y="0" width="960" height="640" fill="url(#bgGradRight)"/>
+
+  <!-- Diagonal separator -->
+  <path d="M960 0 L1000 0 L920 640 L880 640 Z" fill="#FFFFFF" opacity="0.65"/>
+  <path d="M960 0 L980 0 L900 640 L880 640 Z" fill="#C5A059" opacity="0.08"/>
+
+  <!-- Left: Makeup Brands Showcase -->
+  <g transform="translate(160,80)">
+    <!-- Glow -->
+    <ellipse cx="300" cy="200" rx="320" ry="220" fill="url(#maroonGlow)"/>
+    <!-- Compact -->
+    <g filter="url(#softShadow)">
+      <circle cx="260" cy="240" r="90" fill="#ffffff"/>
+      <circle cx="260" cy="240" r="88" fill="#f6f1e6"/>
+      <circle cx="260" cy="240" r="72" fill="#e8d9c5"/>
+      <path d="M188 220 q72 -52 144 0" fill="none" stroke="#800000" stroke-width="3" opacity="0.3"/>
+    </g>
+    <!-- Lipstick -->
+    <g transform="translate(80,260) rotate(-8)" filter="url(#softShadow)">
+      <rect x="0" y="0" width="42" height="120" rx="8" fill="#800000"/>
+      <rect x="0" y="0" width="42" height="40" rx="8" fill="#a52a2a"/>
+      <rect x="6" y="-34" width="30" height="42" rx="6" fill="#d87093"/>
+      <rect x="0" y="120" width="42" height="28" rx="8" fill="#C5A059"/>
+      <rect x="6" y="124" width="30" height="20" rx="4" fill="#B8860B"/>
+    </g>
+    <!-- Brush -->
+    <g transform="translate(380,300) rotate(14)" filter="url(#softShadow)">
+      <rect x="0" y="0" width="22" height="160" rx="11" fill="#C5A059"/>
+      <rect x="3" y="0" width="16" height="120" rx="8" fill="#B8860B"/>
+      <path d="M-10 160 q21 32 42 0" fill="#4b2e2e"/>
+    </g>
+    <!-- Sparkles -->
+    <rect x="0" y="0" width="560" height="360" fill="url(#sparkle)" opacity="0.35"/>
+    <!-- Heading -->
+    <text x="0" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#1c1917" font-weight="700">Makeup Brands Showcase</text>
+    <rect x="0" y="52" width="280" height="4" fill="url(#accentStroke)" rx="2"/>
+    <text x="0" y="82" font-family="Inter, system-ui, -apple-system" font-size="16" fill="#5b534e" opacity="0.9">Editorial-inspired beauty styling aligned to our brand palette</text>
+  </g>
+
+  <!-- Right: Wedding Products Gallery -->
+  <g transform="translate(1120,80)">
+    <!-- Glow -->
+    <ellipse cx="300" cy="220" rx="340" ry="240" fill="url(#goldGlow)"/>
+    <!-- Bangles (concentric rings) -->
+    <g filter="url(#softShadowGold)">
+      <circle cx="260" cy="260" r="110" fill="none" stroke="#C5A059" stroke-width="10"/>
+      <circle cx="260" cy="260" r="92" fill="none" stroke="#B8860B" stroke-width="8" opacity="0.85"/>
+      <circle cx="260" cy="260" r="74" fill="none" stroke="#C5A059" stroke-width="6" stroke-dasharray="18 10"/>
+      <circle cx="260" cy="260" r="56" fill="none" stroke="#800000" stroke-width="4" opacity="0.25"/>
+    </g>
+    <!-- Pendant motif -->
+    <g transform="translate(420,180)">
+      <path d="M0 0 q38 -32 76 0 v80 q-38 32 -76 0 Z" fill="#C5A059" opacity="0.85"/>
+      <circle cx="38" cy="40" r="18" fill="#FFF9E9"/>
+      <circle cx="38" cy="40" r="12" fill="#B8860B"/>
+      <path d="M38 -40 v40" stroke="#B8860B" stroke-width="3"/>
+      <circle cx="38" cy="-46" r="6" fill="#800000"/>
+    </g>
+    <!-- Fabric arc -->
+    <path d="M40 380 C120 320, 240 320, 320 380 S520 440, 600 380" fill="none" stroke="#C5A059" stroke-width="6" opacity="0.4"/>
+    <!-- Heading -->
+    <text x="0" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#1c1917" font-weight="700">Wedding Products Gallery</text>
+    <rect x="0" y="52" width="280" height="4" fill="url(#accentStroke)" rx="2"/>
+    <text x="0" y="82" font-family="Inter, system-ui, -apple-system" font-size="16" fill="#5b534e" opacity="0.9">Curated bridal pieces crafted to photograph beautifully</text>
+  </g>
+
+  <!-- Center light blend -->
+  <circle cx="960" cy="320" r="280" fill="url(#centerLight)"/>
+  <!-- Accent border frame -->
+  <rect x="22" y="22" width="1876" height="596" rx="28" fill="none" stroke="url(#accentStroke)" stroke-width="3" opacity="0.6"/>
+</svg>

@@ -4,12 +4,14 @@ import Image from 'next/image';
 import { Product } from '@/data/products';
 import { Heart, ShoppingBag, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useCart } from '@/context/CartContext';
 
 interface ProductCardProps {
     product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+    const { addItem } = useCart();
     return (
         <motion.div
             className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-stone-100"
@@ -49,7 +51,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
                 {/* Quick Add Button - Slide Up on Hover */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-black/50 to-transparent">
-                    <button className="w-full bg-white text-stone-900 py-3 rounded-lg font-medium text-sm hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 shadow-lg">
+                    <button onClick={() => addItem(product)} className="w-full bg-white text-stone-900 py-3 rounded-lg font-medium text-sm hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 shadow-lg">
                         <ShoppingBag size={16} />
                         Quick Add
                     </button>

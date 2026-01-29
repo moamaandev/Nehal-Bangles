@@ -43,7 +43,7 @@ export default function Testimonials() {
                                     <Star key={i} size={18} fill={i < t.rating ? "currentColor" : "none"} className={i < t.rating ? "" : "text-stone-300"} />
                                 ))}
                             </div>
-                            <p className="text-stone-700 italic mb-6 leading-relaxed">"{t.text}"</p>
+                            <p className="text-stone-700 italic mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
                                     {t.name[0]}

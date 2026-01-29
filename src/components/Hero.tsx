@@ -69,15 +69,6 @@ export default function Hero() {
                                     fill
                                     className="object-contain p-4 hover:scale-105 transition-transform duration-700"
                                 />
-
-                                {/* Floating Badge */}
-                                <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-stone-100">
-                                    <p className="font-serif text-lg font-bold text-stone-900">Wedding Collection</p>
-                                    <div className="flex justify-between items-center mt-1">
-                                        <p className="text-sm text-stone-500">Handcrafted Bridal Set</p>
-                                        <p className="text-primary font-bold">Explore</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </motion.div>
